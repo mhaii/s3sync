@@ -31,6 +31,7 @@ jobs:
       - name: Detect changes
         uses: dorny/paths-filter@v2.10.2
         id: filter
+        if: github.event_name != 'workflow_dispatch'
         with:
           filters: |
             build:
