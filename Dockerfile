@@ -9,4 +9,5 @@ RUN apk --no-cache add aws-cli bash findutils groff less tini inotify-tools
 
 # Entrypoint
 COPY entrypoint.sh /
+RUN chmod a+x /entrypoint.sh
 ENTRYPOINT ["/sbin/tini", "--", "/entrypoint.sh"]
